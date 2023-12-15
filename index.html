@@ -11,22 +11,20 @@
         <a class="navbar-brand" href="#">Trace Atlas</a>
     </nav>
 
-    <div class="container">
-        <div class="row">
+    <div class="container ">
+        <div class="row add-btn">
             <div class="col">
                 <div class="add-step-box"></div>
             </div>
         </div>
         
-        <div class="row">
+        <div class="row marginal">
             <div class="col" id="widgets-container">
                 <!-- Add your widgets here -->
             </div>    
         </div>
     
-    
-    
-        <div class="row">
+        <div class="row marginal">
             <div class="col">
                 <button class="btn btn-primary" data-toggle="modal" data-target="#newStepModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
@@ -56,9 +54,8 @@
                         </div>
                         <div class="form-group">
                             <select class="form-control" id="stepType">
-                                <option value="type1">Type 1</option>
-                                <option value="type2">Type 2</option>
-                                <option value="type3">Type 3</option>
+                                <!-- Options will be dynamically populated -->
+                                
                             </select>
                         </div>
                     </form>
@@ -74,7 +71,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="scripts/modules/Sortable.js"></script>
-    <script src="scripts/js/app.js"></script>
+    <script src="scripts/js/WidgetCreator.js"></script>
+    <script src="scripts/js/Network/WidgetConfiguration.js"></script>
     
 </body>
 </html>

@@ -10,3 +10,11 @@
     display: block;
     justify-content: center;
 }
+
+.marginal {
+    margin-top:10px;
+}
+
+.add-btn {
+    margin-top: 15px;
+}
