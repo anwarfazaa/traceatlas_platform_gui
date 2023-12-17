@@ -1,8 +1,10 @@
-$(document).ready(function() {
-    $('#newStepModal').one('shown.bs.modal', function() {
+
+
+    $('#newStepModal').on('shown.bs.modal', function (e) {
+        console.log("New Step Modal is ready");
         getWidgetsType();
     });
-});
+
 
 function getWidgetsType() {
     fetch('dummy_data/widgets_type.json')

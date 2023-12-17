@@ -1,4 +1,4 @@
-<div class="row">
+    <div class="row">
     <div class="col-3">
         &nbsp;
     </div>
@@ -60,6 +60,7 @@
                         
                     </select>
                 </div>
+                
             </form>
         </div>
         <div class="modal-footer">
@@ -68,3 +69,54 @@
         </div>
     </div>
 </div>
+<script>
+    console.log('widgets types populating');
+    $('#newStepModal').one('shown.bs.modal', function (e) {
+        console.log("New Step Modal is ready");
+        getWidgetsType();
+    });
+
+
+    function getWidgetsType() {
+        fetch('dummy_data/widgets_type.json')
+        .then(response => response.json())
+        .then(data => {
+            const selectElement = document.getElementById('stepType');
+            data.widgets.forEach(widgets => {
+                const optionElement = document.createElement('option');
+                optionElement.value = widgets.name;
+                optionElement.textContent = widgets.name;
+                selectElement.appendChild(optionElement);
+            });
+        });
+    }
+
+    document.getElementById('saveChangesBtn').addEventListener('click', function() {
+        var title = document.getElementById('stepTitle').value;
+        var type = document.getElementById('stepType').value;   
+        // Create a widget using the values
+        var widget = document.createElement('div');
+        widget.className = 'toast show';
+        widget.style = 'max-width: 100%;'
+
+        widget.innerHTML = `<div class="toast-header" style="display: block;">
+            <strong class="me-auto">${type}</strong>
+            <i class="fas fa-cog" style="float:right; cursor: pointer;" data-name="${title}" data-type="${type}" data-toggle="modal" data-target="#configurationModal"></i>    
+            </div>`;
+        widget.innerHTML += `<div class="toast-body">${title}</div>`;
+        // Create a container div
+        var container = document.getElementById('widgets-container');
+        // Add draggable attribute to the widget
+        widget.setAttribute('draggable', 'true');
+        // Add event listeners for drag events
+        container.addEventListener('dragstart', function(event) {
+            event.dataTransfer.setData('text/plain', 'widget');
+        });
+        // Append the widget to the container
+        container.appendChild(widget);
+
+        new Sortable(container, {
+            animation: 150
+        });
+    });      
+</script>
