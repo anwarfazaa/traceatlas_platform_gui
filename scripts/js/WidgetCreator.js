@@ -12,6 +12,7 @@ $('#configurationModal').on('show.bs.modal', function (e) {
     var source = triggerButton.data('type').replace(/\s+/g, '-') + ".html"; // Extract HTML file source
 
     var modal = $(this);
+    console.log(modal);
     modal.find('.modal-title').text(title); // Set the modal title
 
     // Load HTML content into the modal body
