@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-    <title>My Empty HTML Page</title>
+    <title>Trace Atlas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -9,66 +9,66 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Trace Atlas</a>
+        <!--
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown Menu
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Option 1</a>
+                <a class="dropdown-item" href="#">Option 2</a>
+                <a class="dropdown-item" href="#">Option 3</a>
+            </div>
+        </div>
+        -->
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
     </nav>
-
-    <div class="container ">
-        <div class="row add-btn">
-            <div class="col">
-                <div class="add-step-box"></div>
-            </div>
-        </div>
-        
-        <div class="row marginal">
-            <div class="col" id="widgets-container">
-                <!-- Add your widgets here -->
-            </div>    
-        </div>
     
-        <div class="row marginal">
-            <div class="col">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#newStepModal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="newStepModal" tabindex="-1" role="dialog" aria-labelledby="newStepModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="newStepModalLabel">New Step</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="stepTitle">Title</label>
-                            <input type="text" class="form-control" id="stepTitle" placeholder="Enter title">
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" id="stepType">
-                                <!-- Options will be dynamically populated -->
-                                
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="saveChangesBtn" data-dismiss="modal">Save changes</button>
+    <div class="container" id="editor-container" style="margin-top: 30px;">
+        
+        <div class="row" id="empty-workbook-alert">
+            <div class="col-6 offset-3">
+                <div class="alert alert-primary" role="alert">
+                    Looks like you dont have any workbooks yet. Click <b style="cursor: pointer;" data-name="Create" data-type="New Workbook" data-toggle="modal" data-target="#configurationModal">here</b> to create one.
+                    
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal" id="configurationModal">
+        <div class="modal-dialog  modal-xl">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title"></h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body"></div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>  
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="executeProcess">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="scripts/modules/Sortable.js"></script>
     <script src="scripts/js/WidgetCreator.js"></script>

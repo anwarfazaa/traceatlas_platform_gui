@@ -1,0 +1,25 @@
+{
+    "widgets": [
+        {
+            "id": 1,
+            "name": "Synthetic Script"
+        },
+        {
+            "id": 2,
+            "name": "Rest API"
+        },
+        {
+            "id": 3,
+            "name": "APM Data Collector"
+        },
+        {
+            "id": 4,
+            "name": "Data Integrity Check"
+        },
+        {
+            "id": 5,
+            "name": "Log Data Collector"
+        }
+
+    ]
+}
