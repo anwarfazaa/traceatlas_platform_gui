@@ -12,7 +12,7 @@
                 <script>
                     modalButton = document.getElementById('executeProcess');
                     modalButton.addEventListener('click', e => (function() {
-                        processValue = document.getElementById('process').textContent;
+                        processValue = document.getElementById('process').value;
                         console.log(processValue);
                         // You can now use the processValue variable to perform further actions
                         alertbody =document.getElementById('empty-workbook-alert').remove();
