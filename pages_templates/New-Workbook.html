@@ -12,7 +12,7 @@
                 <script>
                     console.log('start');
                     modalButton = document.getElementById('executeProcess');
-                    modalButton.addEventListener('click', e=> (function() {
+                    modalButton.addEventListener('click', function(e) {
                         console.log('eventStarted');
                         processValue = document.getElementById('workbookname').value;
                         // You can now use the processValue variable to perform further actions
@@ -29,7 +29,7 @@
                             console.error('Error fetching content:', error);
                             }
                         });
-                    }));
+                    });
                 </script>
                 <div class="form-group">
                     <div class="input-group mb-3">
